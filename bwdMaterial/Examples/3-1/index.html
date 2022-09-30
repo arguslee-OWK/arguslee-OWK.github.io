@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html style="font-size: 16px;" lang="en-us">
+	<head>
+		<title>Example 3-1</title>
+		<meta charset="utf-8">
+	</head>
+	<!-- Define body text font size & line height -->
+	<body style="font-size: 24px; line-height: 36px;">
+		<!-- 150% of the parent element -->
+		<section style="font-size: 150%;">
+			First Section
+		</section>
+		<!-- 200% of the "root element" (html) font size = 24 x 2 = 48px -->
+		<section style="font-size: 2rem;">
+			Second Section
+		</section>
+		<!-- 300% of the parent element (section) = 24px (inherited from html) x 3 = 72px -->
+		<section>
+			Third <span style="font-size: 2em;">Section</span>
+		</section>
+	</body>
+</html>
