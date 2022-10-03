@@ -17,7 +17,8 @@ body{
 	overflow-x: hidden;
 	background-color: white;
 	color: #000a16;
-	font-family: Lora, serif;
+	font-family: poppins, serif;
+	src: url(user/malcolmhills/documents/github/arguslee-owk.github.io/analysys/fonts/poppins);
 	font-size:  2.4vh;
 	ine-height: 3.6vh;
 }
