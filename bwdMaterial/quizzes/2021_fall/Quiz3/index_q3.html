@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<title>Quiz 3: Complex CSS Selectors Q3</title>
+		<style>
+			/* Choose the simplest selector that targets exactly at all <span> elements that are children of all but last <article> element, and these <article> elements must also be siblings of any <footer> element that is also the immediate child of the <body> element. */
+
+			/* Wrongly applies to nothing because none of the <article>s is enclosed inside <footer> */
+			/*body > footer article:not(:last-of-type) > span {
+				background-color: yellow;
+			}*/
+
+			/* Wrongly applies to only <span>s that are immediate children of the last <article> */
+			/*body > footer ~ article:last-of-type span {
+				background-color: yellow;
+			}*/
+
+			/* Wrongly applies to only <span>s that are immediate children of all but last <article> */
+			/*body > footer ~ article:not(:last-of-type) > span {
+				background-color: yellow;
+			}*/
+
+			/* Correct Answer */
+			body > footer ~ article:not(:last-of-type) span {
+				background-color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<footer>
+			Footer #1
+		</footer>
+		<article>
+			Article #1
+			<span>Span #1</span> <!-- Target -->
+			<div>
+				Div #1 <span>Span #2</span> <!-- Target -->
+			</div>
+		</article>
+		<article>
+			Article #2
+			<span>Span #3</span> <!-- Target -->
+			<div>
+				Div #2 <span>Span #4</span> <!-- Target -->
+			</div>
+		</article>
+		<article>
+			Article #3
+			<span>Span #5</span>
+			<div>
+				Div #3 <span>Span #6</span>
+			</div>
+		</article>
+	</body>
+</html>

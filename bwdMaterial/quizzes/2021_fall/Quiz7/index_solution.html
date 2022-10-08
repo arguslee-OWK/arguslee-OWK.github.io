@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<title>Quiz 7</title>
+		<meta charset="utf-8">
+		<!-- Please have a copy of jQuery in the same folder -->
+		<script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+		<script>
+			// Hint: Every time you hit the "Light up!" button, this variable increases by 1 (index += 1 or index = index + 1).
+			let index = 0;
+			window.onload = function() {
+ 				// Edit the jQuery event listener for the "Light up!" button here.
+ 				$('button').on('click', function() {
+ 					// Add the class name to a <span> element with the number stored in the variable "index".
+ 					$('span').eq(index).addClass('lightUp');
+ 					index = index + 1; // Increase the variable by 1, so next time, the button will light up the next <span> 
+ 				});
+			};
+		</script>
+		<style>
+			body {
+				text-align: center; /* Align all inline elements to the center */
+			}
+
+			span {
+				display: inline-block; /* set <span> to inline-block in order to set width and height */
+				width: 60px;
+				height: 60px;
+				margin: 10px;
+				background-color: red;
+				color: white;
+				font-family: sans-serif;
+				font-size: 50px;
+				line-height: 60px;
+				opacity: 0; /* All <span>s are hidden by setting their opacity to zero */
+			}
+
+			/* Edit the styles below this line, and  do not change anything above. */
+
+ 			/* Add the class "lightUp" to each <span> when the button is clicked and get the animinate to work. */
+			span.lightUp {
+ 				opacity: 1; /* When "lightUp" is added as the class name for a <span>, set opacity to 1 */
+ 				animation: transColor 3s ease-out infinite alternate; /* Specify the parameters for the animation property */
+ 			}
+
+ 			/* Set frame-by-frame changes for the background color */
+ 			@keyframes transColor {
+ 				0% {
+ 					background-color: red;
+ 					transform: rotate(-10deg); /* For the swinging effect */
+ 				}
+
+ 				50% {
+ 					background-color: green;
+ 					transform: rotate(0deg); /* For the swinging effect */
+ 				}
+
+ 				100% {
+ 					background-color: red;
+ 					transform: rotate(10deg); /* For the swinging effect */
+ 				}
+ 			}
+		</style>
+	</head>
+	<!-- Do not change anything in <body> -->
+	<body>
+		<p>
+			<span>
+				M
+			</span>
+			<span>
+				e
+			</span>
+			<span>
+				r
+			</span>
+			<span>
+				r
+			</span>
+			<span>
+				y
+			</span>
+			<span>
+				C
+			</span>
+			<span>
+				h
+			</span>
+			<span>
+				r
+			</span>
+			<span>
+				i
+			</span>
+			<span>
+				s
+			</span>
+			<span>
+				t
+			</span>
+			<span>
+				m
+			</span>
+			<span>
+				a
+			</span>
+			<span>
+				s
+			</span>
+			<span>
+				!
+			</span>
+		</p>
+		<button>Light up!</button>
+	</body>
+</html>

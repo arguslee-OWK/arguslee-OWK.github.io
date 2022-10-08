@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<title>Quiz 3: Complex CSS Selectors Q2</title>
+		<style>
+			/* Choose the simplest selector that targets exactly at all <section> elements that are immediate children of a first <article> element that is also a sibling next to a <nav> element. */
+
+			/* Wrongly applies to nothing. Although Nav #1 is next to Article #1, Nav #1 occurs AFTER Article #1 */
+			/*article:first-of-type + nav > section {
+				background-color: yellow;
+			}*/
+
+			/* Correct answer  */
+			nav + article:first-of-type > section {
+				background-color: yellow;
+			}
+
+			/* Wrongly applies to Section #1 if another element appears between Nav #1 and Article #1 */
+			/*nav ~ article:first-of-type section {
+				background-color: yellow;
+			}*/
+
+			/* Wrongly applies to Section #1 and Section #2 */
+			/*nav + article:first-of-type section {
+				background-color: yellow;
+			}*/
+		</style>
+	</head>
+	<body>
+		<nav>
+			Nav #1
+		</nav>
+		<div>
+			Interrupt.
+		</div>
+		<article>
+			Article #1
+			<section> <!-- Target -->
+				Section #1
+			</section>
+			<div>
+				Div #1
+				<section>
+					Section #2
+				</section>
+			</div>
+		</article>
+		<article>
+			Article #2
+			<section>
+				Section #3
+			</section>
+		</article>
+	</body>
+</html>

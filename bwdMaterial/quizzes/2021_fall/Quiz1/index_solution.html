@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<title>Quiz 1</title>
+		<style>
+			/* Define your CSS style here, and DO NOT use inline CSS style with the "style" attribute. */
+			/* Your CSS styles must be as simple as possible. */
+			article { /* Ancestor */
+				background-color: purple;
+				font-family: sans-serif;
+			}
+
+			section { /* Override background-color and font-family inherited from the <article> ancestor */
+				background-color: pink;
+				font-family: serif;
+			}
+
+			p { /* Override only font-family inherited from the <section> ancestor */
+				font-family: sans-serif;
+			}
+
+			div { /* Override only font-family inherited from the <article> ancestor */
+				font-family: serif;
+			}
+		</style>
+	</head>
+	<body>
+		<article>
+			This line has a sans-serif font in a purple background.
+			<section>
+				This line has a serif font in a pink background.
+				<p>This line has a sans-serif font in a pink background.</p>
+			</section>
+			<div>This line has a serif font in a purple background.</div>
+		</article>
+	</body>
+</html>

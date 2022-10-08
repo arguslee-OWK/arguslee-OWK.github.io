@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<title>Quiz 8</title>
+		<meta charset="utf-8">
+		<!-- Direct link to jQuery. No need to have a copy in the same folder -->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script>
+			// Hint: Every time you hit the "Light up!" button, this "index" variable increases by 1 (index += 1 or index = index + 1).
+			//       And every time you hit the "Turn off!" button, index decreases by 1
+			let index = 0, targetPos = 90; // targetPos must be combined with the string "vw" (90 + 'vw') to become a reasonable CSS setting.
+			window.onload = function() {
+ 				// Edit the jQuery event listener for the "Light up!" button here to make every <span>
+ 				// appear one by one using the jQuery animate() function.
+ 				$('button#lightUp').on('click', function() {
+ 					$('span').eq(index).animate({
+ 						height: '60px',
+ 						right: targetPos + 'vw', // Use targetPos to set the distance between each <span> and the right edge of <p>
+ 						opacity: 1
+ 					}, 4000);
+ 					// The position of an array should never be equal to or higher than the length of the entire array
+ 					if(index + 1 < $('span').length) {
+ 						index += 1; // Set a new target
+ 						targetPos -= 6; // Set a new position
+ 					}
+ 				});
+
+ 				// Edit the jQuery event listener for the "Turn off!" button here to make every <span>
+ 				// disappear one by one using the jQuery animate() function.
+ 				$('button#turnOff').on('click', function() {
+ 					$('span').eq(index).animate({
+ 						// Reset everything
+ 						height: 0,
+ 						right: '5vw',
+ 						opacity: 0
+ 					}, 2000);
+ 					// The position of an array can never go below 0
+ 					if(index - 1 >= 0) {
+ 						index -= 1; // Set a new target
+ 						targetPos += 6; // Gradually reset the target position
+ 					}
+ 				});
+			};
+		</script>
+		<style>
+			/* Do NOT change anything in this <style> block! */
+
+			body {
+				text-align: center; /* Align all inline elements to the center */
+			}
+
+			p {
+				position: relative;
+			}
+
+			span {
+				display: inline-block; /* set <span> to inline-block in order to set width and height */
+				position: absolute;
+				top: 0;
+				right: 5vw;
+				width: 60px;
+				height: 0; /* All <span>s are hidden by setting their height to zero */
+				background-color: red;
+				color: white;
+				font-family: sans-serif;
+				font-size: 50px;
+				line-height: 60px;
+				overflow: hidden;
+				opacity: 0; /* All <span>s are hidden by setting their opacity to zero */
+				animation: transColor 1s linear infinite alternate;
+			}
+
+			@keyframes transColor {
+ 				0% {
+ 					background-color: red;
+ 					transform: rotate(-15deg);
+ 				}
+
+ 				50% {
+ 					background-color: orange;
+ 					transform: rotate(0deg);
+ 				}
+
+ 				100% {
+ 					background-color: green;
+ 					transform: rotate(15deg);
+ 				}
+			}
+
+		</style>
+	</head>
+	<!-- Do not change anything in <body> -->
+	<body>
+		<p>
+			<span>
+				M
+			</span>
+			<span>
+				e
+			</span>
+			<span>
+				r
+			</span>
+			<span>
+				r
+			</span>
+			<span>
+				y
+			</span>
+			<span>
+				C
+			</span>
+			<span>
+				h
+			</span>
+			<span>
+				r
+			</span>
+			<span>
+				i
+			</span>
+			<span>
+				s
+			</span>
+			<span>
+				t
+			</span>
+			<span>
+				m
+			</span>
+			<span>
+				a
+			</span>
+			<span>
+				s
+			</span>
+			<span>
+				!
+			</span>
+		</p>
+		<p style="position: relative; top: 10vh;">
+			<button id="lightUp">Light up!</button>
+			<button id="turnOff">Turn off!</button>
+		</p>
+	</body>
+</html>

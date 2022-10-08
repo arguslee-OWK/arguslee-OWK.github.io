@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<title>Quiz 3: Complex CSS Selectors Q1</title>
+		<style>
+			/* Choose the simplest selector that targets exactly at the first line of every <p> element that is the first element immediately included in any <section> element, and the <section> element must also be adjacent to an <h1> that is a child of any <article> element. */
+
+			/* Wrongly applies to all <p>s inside <section> */
+			/*article > h1 + section p:first-of-type::first-/line {
+				background-color: yellow;
+			}*/
+
+			/* Wrongly applies to all but the last <p>s inside <section> */
+			/*article h1 + section p:first-child::first-line {
+				background-color: yellow;
+			}*/
+
+			/* Correct answer */
+			/*article h1 + section > p:first-child::first-line { 
+				background-color: yellow;
+			}*/
+
+			/* Wrongly applies to all first <p>s that are an immediate child of <section> */
+			/*article h1 + section > p:first-of-type::first-line {
+				background-color: yellow;
+			}*/
+		</style>
+	</head>
+	<body>
+		<article>
+			<h1>Article #1</h1>
+			<section>
+				Section #1
+				<p>Section Paragraph #1<br/> <!-- Target -->
+					After Line Break
+				</p>
+				<div>
+					Div #1
+					<p>Div Paragraph #1<br/>
+						After Line Break
+					</p>
+				</div>
+			</section>
+		</article>
+		<article>
+			<h1>Article #2</h1>
+			<section>
+				Section #2
+				<div>
+					Div #2
+					<p>Div Paragraph #2<br/>
+						After Line Break
+					</p>
+				</div>
+				<p>Section Paragraph #2<br/>
+					After Line Break
+				</p>
+			</section>
+		</article>
+	</body>
+</html>
