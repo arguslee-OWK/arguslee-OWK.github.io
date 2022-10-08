@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<title>Example 4-2</title>
+		<meta charset="utf-8">
+		<style>
+			/* <h1> and <p> are adjacent siblings. <p> is the target. */
+			h1 + p {
+				font-size: 130%;
+			}
+
+			/* <h1> and <p> are adjacent or non-adjacent siblings. <p> is the target. */
+			h1 ~ p {
+				font-size: 130%;
+			}
+
+			p {
+				font-size: 110%;
+			}
+		</style>
+	</head>
+	<body>
+		<article>
+			<h1>This is the article header.</h1>
+			<div>This is a div.</div>
+			<!-- This <p> is the adjacent sibling of <h1> without <div>, but the non-adjacent sibling of <h1> with <div> -->
+			<p>This is the summary of an article.</p>
+			<section>
+				First section.
+				<p>
+					Section 1 Paragraph 1.
+				</p>
+			</section>
+			<section>
+				Second section.
+				<p>
+					Section 2 Paragraph 1.
+				</p>
+			</section>
+			<section>
+				Third section.
+				<p>
+					Section 3 Paragraph 1.
+				</p>
+			</section>
+		</article>
+	</body>
+</html>
