@@ -47,33 +47,59 @@
 			
 			h1 {				
 				padding: 5vh 0vw;
-				background-color: orange;
-				color: black;
-			}
-
-			article:first-of-type {
 				background-color: Orange;
 				color: black;
 			}
-
-				section:nth-child(odd) {
-	                background-color: Yellow;
-	                color: block;              
-	        	}
-
-			article:last-of-type {
-				background-color: yellow;
-	       		color: block; 
-	       		}
-
-	            Section:nth-child(4) {
+			
+			Article {
+				padding: 0vh 0vw;
+			}
+			
+	            section:nth-child(even) {
 	                background-color: orange;
 	                color: block;              
-	        	}
-	        
+	                width: 100%;
+					min-height: 5vH;
+					margin-left:0vw;
+	            }
 
-	        
+	            section:nth-child(odd) {
+	                background-color: yellow;
+	                color: black;
+	                width: 100%;
+					min-height: 5vH;
+					margin-left:0vw;
+	            }
 
+	       	/*	div:first-of-type {
+				position: relative;
+				top: 200px;
+				background-color: pink;
+			}
+
+			div:last-of-type {
+				position: absolute; /* "fixed" also works here */
+		/*		top: 20px;
+				right: 50px;
+				width: 300px;
+				background-color: blue;
+			}
+
+			div > p:first-of-type {
+				position: relative;
+				left: -50px; /* right: 100px; also works here */
+		/*		background-color: orange;
+			}
+
+			div > p:last-of-type {
+				position: fixed;
+				bottom: 0;
+				right: 0;
+				background-color: red;
+			}
+		*/
+
+				
 			
 			/* Try to keep your CSS settings as simple as possible */
 			/* You're not allowed to use "class" or "id" attributes */
