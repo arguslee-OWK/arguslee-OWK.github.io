@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<title>Task 6</title>
+		<meta charset="utf-8">
+		<style>
+			/* Do not change the settings below */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			html {
+				width: 100%;
+				height: 100%;
+			}
+
+			body {
+				width: 80%;
+				min-height: 100%;
+				margin-left: 10%;
+			}
+
+			nav {
+				background-color: red;
+				color: white;
+				height: 5vh;
+				line-height: 5vh;
+				font-weight: bold;
+			}
+
+			section {
+				height: 10vh;
+			}
+			/* Do not change the above settings */
+
+			/* Add your own CSS settings below */
+
+			/* Try to keep your CSS settings as simple as possible */
+			nav {
+				position: fixed; /* So <nav> is always fixed to the same position in the viewport. */
+				top: 0; /* Stick to the top edge of the viewport */
+				width: 80%; /* Once the position is set to "fixed", it does not inherit any width 
+				from an ancestor element, so we need to set the width once again. Here the reference 
+				element is the entire viewport, so 80% means "80%" of the viewport width. */
+				opacity: 0.8; /* So <nav> does not block the contents completely when scrolling. */
+			}
+
+			article {
+				/* Since most <section> elements are required to have an orange background, the 
+				"simplest" solution is to set both <article> elements to have a "default" orange 
+				background, and change specific <section> elements to have a difference background 
+				color if necessay. This setting is also enough to change the background color of <h1> 
+				inside all <article> elements.*/
+				background-color: orange;
+			}
+
+			article:first-of-type {
+				/* Leave a margin of 5vh above the first <article> (which is the same as the height 
+				of <nav>), so <article> never overlaps with <nav> at the top of the page. */
+				margin-top: 5vh;
+			}
+
+			article:first-of-type > section:nth-of-type(even) {
+				/* For the first <article> element, set a yellow background color for all 
+				even-numbered <section> elements. Remember, we still have a default orange background 
+				color inherit from the settings for all <article> elements, so odd-numbered <section> 
+				elements in this <article> remain to have an orange background color. */
+				background-color: yellow;
+			}
+
+			/* Use the pseudo class :not() to exclude some element, and inside :not(), use the pseudo 
+			class :nth-of-type() to specify which <section> element has to be excluded. In the 
+			selector below, all but the fourth <section> element in the second <article> (also the 
+			last one) is set to have a yellow background color. Others still have the default orange 
+			background color inherited from the CSS settings of both <article> elements. */
+			article:last-of-type > section:not(:nth-of-type(4)) {
+				background-color: yellow;
+			}
+
+			/* Add your own CSS settings above */
+		</style>
+	</head>
+	<body>
+		<!-- <nav> should stay at the top of the viewport, with some degree of opacity to avoid blocking the article content -->
+		<nav>
+			Menu
+		</nav>
+		<!-- <article> should not overlap with <nav> when the document is scrolled to the top -->
+		<article>
+			<!-- all <h1> elements must have an orange background color -->
+			<h1>Article 1</h1>
+			<!-- In the first <article> element, odd-numbered <section> elements must also have an orange background color, while even-numbered <section> elements must have a yellow background color. -->
+			<section>
+				Art #1, Sec #1	
+			</section>
+			<section>
+				Art #1, Sec #2	
+			</section>
+			<section>
+				Art #1, Sec #3	
+			</section>
+			<section>
+				Art #1, Sec #4
+			</section>
+			<section>
+				Art #1, Sec #5	
+			</section>
+			<section>
+				Art #1, Sec #6	
+			</section>
+		</article>
+		<article>
+			<h1>Article 2</h1>
+			<!-- In the second <article> element, all <section> elements must have a "yellow" background color, except for the "fourth" <section> element, which must have an orange background color -->
+			<section>
+				Art #2, Sec #1	
+			</section>
+			<section>
+				Art #2, Sec #2	
+			</section>
+			<section>
+				Art #2, Sec #3	
+			</section>
+			<section>
+				Art #2, Sec #4
+			</section>
+			<section>
+				Art #2, Sec #5	
+			</section>
+			<section>
+				Art #2, Sec #6	
+			</section>
+		</article>
+	</body>
+</html>
