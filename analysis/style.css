@@ -1,6 +1,7 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Lora&family=Poppins&family=Source+Sans+Pro&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=Lora&family=Noto+Sans+TC&family=Poppins&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Noto+Sans+TC&family=Poppins&family=Source+Sans+Pro&display=swap');
+
+</style>
 
 *{
 	box-sizing: border-box;
@@ -26,6 +27,10 @@ body{
 
 h1, h2, h3{
 	font-family: poppins, sans-serif;
+}
+
+h4{
+	font-family: Noto, sans-tranditional Chinese;
 }
 
 h1 {
