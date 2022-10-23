@@ -1,43 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Poppins&family=Source+Sans+Pro&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Lora&family=Noto+Sans+TC&family=Poppins&family=Source+Sans+Pro&display=swap');
-
-</style>
-
-*{
+* {
 	box-sizing: border-box;
 	margin: 0;
-	Padding: 0;
+	padding: 0;
 }
 
-html{
+html {
 	height: 100%;
 	width: 100%;
 }
 
-body{
+body {
 	min-height: 100%;
 	width: 100%;
 	overflow-x: hidden;
 	background-color: white;
 	color: #000a16;
 	font-family: Lora, serif;
-	font-size:  2.4vh;
-	ine-height: 3.6vh;
+	font-size: 2.4vh;
+	line-height: 3.6vh;
 }
 
-h1, h2, h3{
-	font-family: poppins, sans-serif;
-}
-
-h4{
-	
-	font-family: Noto, sans-serif;
+h1, h2, h3 {
+	font-family: Poppins, sans-serif;
 }
 
 h1 {
 	font-size: 4.8vh;
 	line-height: 7.2vh;
-	margin: 1hv 0;
+	margin: 1vh 0;
 }
 
 h2 {
@@ -90,7 +82,7 @@ section {
 
 section > p {
 	text-indent: 5%;
-} /* 針對每一個 P 做縮排5% */
+}
 
 p {
 	margin: 0.2vh 0;
