@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+      window.onload = function() {
+        let btn = document.getElementsById('div2');
+      }
+      document.getElementById("btn").addEventListener("mouseenter", mouseEnter);
+      document.getElementById("btn").addEventListener("mouseleave", mouseLeave);
+
+      function mouseEnter() {
+      document.getElementById("btn").style.color = "red";
+      }
+
+      function mouseLeave() {
+      document.getElementById("btn").style.color = "black";
+      }
+  </script>
+
+</head> 
+  <article>
+  <body>
+
+  <p>This example uses the addEventListener() method to attach a "mouseenter" and "mouseleave" event to a h1 element.</p>
+
+    <h1 id="div1">Mouse over me</h1>
+    <h1 id="div2">Mouse on me</h1>
+
+  </body>
+  </article>
+</html>

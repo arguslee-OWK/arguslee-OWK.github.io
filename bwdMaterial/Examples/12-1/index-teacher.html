@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<title>Example 12-1</title>
+		<meta charset="utf-8">
+		<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+		<script>
+			function changeTexts () {
+				$(this).html('Changed!');
+			}
+
+			window.onload = function () {
+				//$('div').on('click', changeTexts);
+				/* There are many jQuery functions that could serve as a shortcut for adding an event 
+				   listener to HTML elements. For example, "click()" is the short form of "on('click')".
+				   The statement below thus has the same effect as the statement above.
+				*/
+				//$('div').click(changeTexts);
+				/* However, on() is more useful for binding MULTIPLE events to HTML elements at the same time,
+				   as long as you separate every two event types with a space.
+				   This would be useful especially when dealing with both desktop and mobile browser. For example,
+				   some mobile browsers do not react to the mouse event "click" but to gestural events like "touchend".
+				   It is thus necessary to bind both "click" and "touchend" for the same interactive effects to work
+				   in different contexts.
+				*/
+				$('div').on('click touchend', changeTexts);
+			};
+		</script>
+		<style>
+			div {
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				color: white;
+				text-align: center;
+				line-height: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

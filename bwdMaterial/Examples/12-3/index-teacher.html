@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<title>Example 12-3 Teacher</title>
+		<meta charset="utf-8">
+		<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+		<script>
+			function checkRestoreDIVPos () {
+				// Get all the <div> elements
+				let divs = $('div');
+				// Get the current viewport height.
+				let vpHeight = $(window).height();
+				// Get the current amount of scrolling.
+				let scrollTop = $(window).scrollTop();
+				// Check all <div> elements to see if any of them appears in the viewport.
+				divs.each(function (index) {
+					// Get a <div> element based on the index number
+					let div = divs.eq(index);
+					// Get the distance between the top edge of the current element
+					// and the top edge of the viewport.
+					let divTop = div.offset().top;
+					/* If the height of the viewport PLUS the scrolling distance is larger 
+					   than "divTop", it means the viewport must include at least 1 pixel of 
+					   the current <div> element, so the "top" property of this element is
+					   reset to "0" (i.e., move the element up and back to its original position).
+					   Here, we subtract 50 from the total of vpHeight and scrollTop to make sure
+					   that "top" is restored only when the viewport include at least 51 pixels
+					   of the current element, so the change is more visible in the browser 
+					   (try to play around with the number and see the differences yourself.)
+					*/
+					if(vpHeight + scrollTop - 50 > divTop) {
+						div.css('top', 0);
+					}
+				});
+			}
+
+			window.onload = function () {
+				// To get the function done, we need to retrieve some numbers using jQuery..
+				// First, the height of the viewport in pixels.
+				console.log($(window).height());
+				// Second, the distance between the top edge of the viewport and the top edge
+				// of the HTML document; i.e., the distance of scrolling down in pixels.
+				console.log($(window).scrollTop());
+				let divs = $('div');
+				// The distance between the top edge of an HTML element and the top edge of the HTML
+				// document.
+				/* This information could be obtained with the jQuery function "offset()", which
+				   retrieves the distance between the "left" edge of an element and the left edge of
+				   the document as well as between the "top" edge of an element and the top edge of
+				   the document.
+				*/
+				// For the first <div> element
+				console.log(divs.eq(0).offset().top);
+				// For the last (i.e., -1) <div> element
+				console.log(divs.eq(-1).offset().top);
+				/* When the HTML document is fully loaded, check immediately if some <div> elements
+				   already appear in the viewport and restore their "top" setting.
+				*/
+				checkRestoreDIVPos();
+				/* Also bind the "scroll" event as well as "checkRestoreDIVPos" to the entire document, 
+				   so every time when the document is scrolled, the program will check if there's any
+				   <div> appearing in the viewport and then restore their "top" setting.
+				*/
+				$(document).on('scroll', checkRestoreDIVPos);
+			};
+		</script>
+		<style>
+			div {
+				/* Set all <div> elements to have a new position "relative" to 
+				   the "top edge" their original position by 50 pixels. That is,
+				   all <div> elements are moved down from their original position
+				   by 50 pixels. The JS codes above will reset "top" to "0" when
+				   the browser viewport is scrolled down to include a <div> element.
+				*/
+				position: relative;
+				top: 50px;
+				width: 200px;
+				height: 200px;
+				margin: 10px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+</html>

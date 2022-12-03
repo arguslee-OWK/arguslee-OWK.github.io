@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+    <head>
+        <title>Task 12-3</title>
+        <meta charset="utf-8">
+
+        <script>
+            function show(num)  {   //num 對應到 下面 show()裡面的數字！
+                var content = document.getElementsByClassName('content3'); // getElementsByClassName得到的是数组形式
+                    content = content[num]; // 得到数组的其中一成员，返回一个对象（p标签元素）
+    
+                    // 如果对象中的diplay状态为none
+                if (content.style.display=="none") {
+
+                    // 将该对象的diplay属性修改为block进行显示
+                    content.style.display="block";
+                } else{
+
+                // 否则修改为none进行隐藏
+                content.style.display="none";
+                }
+   
+                //console.log(content);
+                // https://www.cnblogs.com/finalanddistance/p/9184420.html
+            }
+        </script>
+
+        <a href="javascript:" onclick="show(0)">01</a>
+        <p class="content3" style="display: none"> This is comment 01</p>
+
+        <a href="javascript:" onclick="show(1)">02</a>
+        <p class="content3" style="display: none"> This is comment 02</p>
+
+        <a href="javascript:" onclick="show(2)">03</a>
+        <p class="content3" style="display: none"> This is comment 03</p>
+        /*  可以放在前面，也可以放在這邊！*/
+
+    </head>
+</html>

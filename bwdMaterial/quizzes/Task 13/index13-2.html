@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<title>Task 13-2</title>
+		<meta charset="utf-8">
+		<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+		<script>
+
+				$(document).ready(function() {
+					$("div")	
+						.attr('style','display:inline-block')
+						.click(function(){
+							$("div:not(:first-of-type)").on();
+  						})	
+				})
+
+		</script>
+		
+		<style>
+			div {
+				padding: 0;
+				display: inline-block;
+				width: 100px;
+				height: 100px;
+				line-height: 100px;
+				color: white;
+				text-align: center;
+			}
+
+			div:first-of-type {
+				background-color: red;
+				cursor: pointer;
+			}
+
+			div:not(:first-of-type) {
+				display: none;
+				background-color: blue;
+			}
+		</style>
+
+	</head>
+	<body>
+		<div>Menu</div>
+		<div>Item 1</div>
+		<div>Item 2</div>
+		<div>Item 3</div>
+		<div>Item 4</div>
+		<div>Item 5</div>
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<title>Example 11-1</title>
+		<meta charset="utf-8">
+		<script src="https:code.jquery.com/jquery-3.6.1.min.js">
+		</script>
+		<script>
+			window.onload = function () {
+			let lastP = document.getElementById('last');
+			let specialPs = document.getElementsByClassName('special');
+			let cjildPs = document.querySelectorAll('p > p');
+
+			//lastP = $('#last');
+			specialPs = $('.special');
+			childPs = $('p > p');
+
+			//console.log(lastP[0]);
+			//console.log(specialPs[0].innerHTML);
+			console.log(specialPs.eq(0).html());
+
+			let arrayLength = specialPs.length;
+			let lastPos = arrayLength -1;
+
+			//console.log(specialPs[lastPos].innerHtml);
+
+			console.log(specialPs.eq(-1).html());
+
+			specialPs.eq(-1).html('HTML changed!');
+			specialPs[lastPos].innerHTML = 'HTML Changed!';
+
+			lastP.eq(0).html('Last Changed!');
+		};
+		</script>
+	</head>
+	<body>
+		<p id="first">
+			First P
+		</p>
+		<p class="special">
+			Second P
+		</p>
+		<p class="special" id="last">
+			Third p
+		</p>
+	</body>
+</html>
