@@ -13,14 +13,14 @@ function showHideMenuItems (event) {
 		$('nav > a > span').addClass('rotated');
 		menuOpen = true;
 	}
-}
+};
 
 function hideMenuItems () {
 	let menuItems = $('nav > a:not(:first-of-type)');
 	menuItems.css('display','none');
 	$('nav > a > span').removeClass('rotated');
 	menuOpen = false;
-}
+};
 
 window.onload = function () {
 	$('nav > a:first-of-type').on('click',showHideMenuItems);
