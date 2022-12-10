@@ -88,6 +88,7 @@ nav > a:not(:first-of-type) {
 
 nav > a.open {
 	width: 12vw;
+	padding: 2px 10px;
 	border-left: 2px solid white;
 	transition: width 0.5s ease-out;
 }
