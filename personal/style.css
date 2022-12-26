@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora&family=Poppins&family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
 
 * {
-	box-sizing: border-box;
 	margin: 0;
-	padding: 0;
+    padding: 0;
+    list-style: none;
+    font-family:'Noto Sans TC', sans-serif;
 }
 
 html {
@@ -22,8 +23,64 @@ body {
 	line-height: 3.6vh;
 }
 
+.banner {
+	width: 100%;
+	height: 100vh;
+	background-color: #ccc;
+	background: linear-gradient(119deg, #aaa9ad 20%, transparent 75%) center center / 100% 100%, url("img/home1.jpg") right center / auto 100%;
+} 
+
+.container{
+	width: 1440px;
+	margin: auto;
+	height: 100%;
+}
+
+.banner-text{
+	height: 100%;
+	display: flex;            
+	flex-direction:column;
+	justify-content:center ;
+	align-items: flex-start;
+}
+
+.banner-text h1{  
+	font-size:50px;
+	border-bottom: 1px solid rgb(51, 51, 51);
+	font-weight: 900;
+	padding-bottom: 0.3em;
+	margin: 0 20px;
+	margin-bottom: 0.3em;
+	color:#fff;
+}
+
+.banner-text h1 small{
+	display: block;
+	font-size:30px;
+	font-weight: 700;
+	color: #fff;
+}
+
+.banner-text h2{
+	font-size:30px;
+	margin: 0 20px;
+	font-weight: 700;
+	color: #fff;
+}
+
+.banner-text p{
+	font-size:20px;
+	margin: 0px 20px;
+	font-weight: 300;
+	color: #fff;
+}
+
 h1, h2, h3 {
 	font-family: Poppins, sans-serif;
+}
+
+h4, h5, h6 {
+	font-family:'Noto Sans TC', sans-serif;
 }
 
 h1 {
@@ -43,6 +100,7 @@ h3 {
 	line-height: 4.5vh;
 	margin: 0.5vh 0;
 }
+
 
 nav {
 	position: fixed;
