@@ -62,15 +62,15 @@ body {
 }
 
 .banner-text h2{
-	font-size:30px;
-	margin: 0 20px;
+	font-size:28px;
+	margin: 0 40px;
 	font-weight: 700;
 	color: #fff;
 }
 
 .banner-text p{
 	font-size:20px;
-	margin: 0px 20px;
+	margin: 0px 40px;
 	font-weight: 300;
 	color: #fff;
 }
