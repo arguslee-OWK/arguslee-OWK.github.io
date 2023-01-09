@@ -31,5 +31,4 @@ function hideMenuItems () {
 window.onload = function () {
 	$('.main li > a:first-child').on('click',showHideMenuItems);
 	$(document).on('click', hideMenuItems);
-
 };
