@@ -19,6 +19,7 @@ function showHideMenuItems (event) {
 	}
 };
 
+
 function hideMenuItems () {
 	let menuItems = $('.main li > a:not(:first-child)');
 	//menuItems.css('display','none');
